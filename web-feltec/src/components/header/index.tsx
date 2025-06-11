@@ -5,10 +5,14 @@ import { Input } from "../ui/input";
 import { useCallback, useState } from "react";
 import Image from "next/image";
 import Logo from "../../../public/Logo Feltec.png";
+import { ThemeButton } from "../themechange/themeButton";
 
 export default function Header() {
   return (
     <header className="w-full h-16 bg-nc-base-600 text-white shadow bg-feltec-primary-dark">
+      <div className="flex justify-end">
+        <ThemeButton />
+      </div>
       <div className="w-full h-full grid grid-cols-4 items-center justify-between ">
         <span className=" w-40 h-10 flex items-center justify-center font-bold text-2xl">
           <Image
