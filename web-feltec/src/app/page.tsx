@@ -60,6 +60,21 @@ export default function Home() {
 
           <Image src={manuten} alt="Manutenção" className="object-contain" />
         </section>
+        {/* Seção quem somos  */}
+        <section>
+          <h2>QUEM SOMOS</h2>
+          <p>
+            A Feltec Solutions IT é uma empresa especializada em soluções
+            tecnológicas sob medida, atuando com foco em desenvolvimento web,
+            mobile e prototipação de sistemas. Unimos inovação, performance e
+            experiência do usuário para entregar projetos eficientes, seguros e
+            de alto impacto. Com uma equipe dedicada e apaixonada por
+            tecnologia, ajudamos empresas a evoluírem digitalmente, oferecendo
+            serviços personalizados que acompanham as tendências e necessidades
+            do mercado atual
+          </p>
+          <Image src={sobre} alt="Quem somos" className="object-contain" />
+        </section>
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
         ISSO VAI SER O FOOTER
