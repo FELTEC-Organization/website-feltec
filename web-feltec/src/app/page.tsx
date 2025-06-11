@@ -6,6 +6,7 @@ import desenvolvimento from "../../public/desenvolvimento.png";
 import apps from "../../public/apps.png";
 import proto from "../../public/prototipação.png";
 import manuten from "../../public/manutenção.png";
+import tecnologias from "../../public/tecnologias.png";
 
 export default function Home() {
   return (
@@ -74,6 +75,22 @@ export default function Home() {
             do mercado atual
           </p>
           <Image src={sobre} alt="Quem somos" className="object-contain" />
+        </section>
+        {/*Seção tecnologias */}
+        <section>
+          <h2>Nossas especialidades</h2>
+          <Image
+            src={tecnologias}
+            alt="tecnologias"
+            className="object-contain"
+          />
+        </section>
+        {/*Seção benefícios  */}
+        <section>
+          <h2></h2>
+          <div>
+            <h2></h2>
+          </div>
         </section>
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
