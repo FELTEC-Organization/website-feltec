@@ -2,6 +2,10 @@ import Header from "@/components/header";
 import Image from "next/image";
 import capa from "../../public/capa-pagina.png";
 import sobre from "../../public/elemento-sobre.png";
+import desenvolvimento from "../../public/desenvolvimento.png";
+import apps from "../../public/apps.png";
+import proto from "../../public/prototipação.png";
+import manuten from "../../public/manutenção.png";
 
 export default function Home() {
   return (
@@ -37,8 +41,25 @@ export default function Home() {
           </p>
           <Image src={sobre} alt="sobre" className="object-contain" />
         </section>
+        {/* Seção serviços */}
+        <section>
+          <h2>Conheça nossos serviços</h2>
+          <Image
+            src={desenvolvimento}
+            alt="Desenvolvimento de sites"
+            className="object-contain"
+          />
 
-        <section></section>
+          <Image
+            src={apps}
+            alt="Desenvolvimento de apps"
+            className="object-contain"
+          />
+
+          <Image src={proto} alt="Prototipação" className="object-contain" />
+
+          <Image src={manuten} alt="Manutenção" className="object-contain" />
+        </section>
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
         ISSO VAI SER O FOOTER
