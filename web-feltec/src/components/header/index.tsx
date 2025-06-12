@@ -9,10 +9,8 @@ import { ThemeButton } from "../themechange/themeButton";
 
 export default function Header() {
   return (
-    <header className="w-full h-16 bg-nc-base-600 text-white shadow bg-feltec-primary-dark">
-      <div className="flex justify-end">
-        <ThemeButton />
-      </div>
+    <header className="dark:bg-zinc-900 w-full h-16 bg-nc-base-600 text-white shadow bg-feltec-primary-dark">
+      <div className="flex justify-end"></div>
       <div className="w-full h-full grid grid-cols-4 items-center justify-between ">
         <span className=" w-40 h-10 flex items-center justify-center font-bold text-2xl">
           <Image
@@ -33,6 +31,9 @@ export default function Header() {
           <Button className="p-2 rounded bg-nc-base-800 hover:bg-nc-base-400">
             CONTATO
           </Button>
+          <div className="text-zinc-900 dark:text-white">
+            <ThemeButton />
+          </div>
         </div>
       </div>
     </header>

@@ -12,20 +12,20 @@ import beneficios from "../../public/beneficios.png";
 export default function Home() {
   return (
     <div>
-      <main>
+      <main className="dark:text-white dark:bg-black">
         <div>
           <Header />
         </div>
         {/*Seção capa  */}
         <section className="relative inset-0">
           <Image src={capa} alt="capa da pagina" className="object-contain " />
-          <h2 className="text-3xl font-bold text-left mb-6 4k:text-4xl top-0">
+          <h2 className="dark:text-black text-3xl font-bold text-left mb-6 4k:text-4xl top-0">
             Soluções de TI para o seu negócio
           </h2>
           <p>
             impulsione seus resultados com os nossos serviços especializados
           </p>
-          <button>Entre em contato</button>
+          <button className="dark:text-black">Entre em contato</button>
         </section>
 
         {/*Seção sobre  */}
@@ -64,7 +64,7 @@ export default function Home() {
         </section>
         {/* Seção quem somos  */}
         <section>
-          <h2>QUEM SOMOS</h2>
+          <h2 className="">QUEM SOMOS</h2>
           <p>
             A Feltec Solutions IT é uma empresa especializada em soluções
             tecnológicas sob medida, atuando com foco em desenvolvimento web,
