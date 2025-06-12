@@ -21,13 +21,13 @@ export default function Header() {
 
         <div className="flex items-center gap-2 ml-auto col-span-2">
           <Button className="p-2 rounded bg-nc-base-800 hover:bg-nc-base-400">
-            <Info />
+            HOME
           </Button>
           <Button className="p-2 rounded bg-nc-base-800 hover:bg-nc-base-400">
-            <Search />
+            SERVIÇOS
           </Button>
           <Button className="p-2 rounded bg-nc-base-800 hover:bg-nc-base-400">
-            <Bell />
+            CONTATO
           </Button>
         </div>
       </div>
