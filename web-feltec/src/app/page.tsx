@@ -9,6 +9,7 @@ import manuten from "../../public/manutenção.png";
 import tecnologias from "../../public/tecnologias.png";
 import beneficios from "../../public/beneficios.png";
 
+
 export default function Home() {
   return (
     <div>

@@ -1,11 +1,12 @@
 "use client";
+import * as React from "react";
 import { Search, Bell, Info, ChevronDown, ChevronUp } from "lucide-react";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { useCallback, useState } from "react";
 import Image from "next/image";
 import Logo from "../../../public/Logo Feltec.png";
-import { ThemeButton } from "../themechange/themeButton";
+import DropdownMenuCheckboxes from "../dropDownmenu/dropDownmenu";
 
 export default function Header() {
   return (
@@ -31,9 +32,8 @@ export default function Header() {
           <Button className="p-2 rounded bg-nc-base-800 hover:bg-nc-base-400">
             CONTATO
           </Button>
-          <div className="text-zinc-900 dark:text-white">
-            <ThemeButton />
-          </div>
+          <div className="text-zinc-900 dark:text-white"></div>
+          <DropdownMenuCheckboxes />
         </div>
       </div>
     </header>
