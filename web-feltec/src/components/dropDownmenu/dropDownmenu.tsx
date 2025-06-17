@@ -14,6 +14,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Settings } from "lucide-react";
+import LanguageSelector from "../changeLanguage/changeLanguage";
 
 type Checked = DropdownMenuCheckboxItemProps["checked"];
 
@@ -32,6 +33,9 @@ function DropdownMenuCheckboxes() {
         <DropdownMenuSeparator />
         <DropdownMenuItem asChild>
           <ThemeButton />
+        </DropdownMenuItem>
+        <DropdownMenuItem asChild>
+          <LanguageSelector />
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

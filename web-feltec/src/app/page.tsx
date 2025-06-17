@@ -1,3 +1,4 @@
+"use client";
 import Header from "@/components/header";
 import Image from "next/image";
 import capa from "../../public/capa-pagina.png";
@@ -8,9 +9,11 @@ import proto from "../../public/prototipação.png";
 import manuten from "../../public/manutenção.png";
 import tecnologias from "../../public/tecnologias.png";
 import beneficios from "../../public/beneficios.png";
-
+import "../i18n/locales/i18nfy";
+import { Trans, useTranslation } from "react-i18next";
 
 export default function Home() {
+  const { t } = useTranslation();
   return (
     <div>
       <main className="dark:text-white dark:bg-black">
@@ -21,7 +24,7 @@ export default function Home() {
         <section className="relative inset-0">
           <Image src={capa} alt="capa da pagina" className="object-contain " />
           <h2 className="dark:text-black text-3xl font-bold text-left mb-6 4k:text-4xl top-0">
-            Soluções de TI para o seu negócio
+            {t("title.title")}
           </h2>
           <p>
             impulsione seus resultados com os nossos serviços especializados
@@ -93,7 +96,7 @@ export default function Home() {
         </section>
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        FOOTER 
+        FOOTER
       </footer>
     </div>
   );
