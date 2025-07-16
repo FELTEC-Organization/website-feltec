@@ -1,11 +1,5 @@
 import Image from "next/image";
-import capa from "../../public/capa-pagina.png";
 import sobre from "../../public/elemento-sobre.png";
-import desenvolvimento from "../../public/desenvolvimento.png";
-import apps from "../../public/apps.png";
-import proto from "../../public/prototipação.png";
-import manuten from "../../public/manutenção.png";
-import tecnologias from "../../public/tecnologias.png";
 import beneficios from "../../public/beneficios.png";
 import { getDataHome } from "@/utils/actions/get-data";
 // import "../i18n/locales/i18nfy";
@@ -17,6 +11,7 @@ import Container from "@/components/container";
 import { About } from "@/components/about";
 import Services from "@/components/servicing";
 import Footer from "@/components/footer";
+import AnimatedTechCarousel from "@/components/techStacks";
 
 export default async function Home() {
   const { object }: HomeProps = await getDataHome();
@@ -57,9 +52,7 @@ export default async function Home() {
         </section>
 
         {/*Seção tecnologias */}
-        <section className="bg-red-600 p-20">
-          <h2>Nossas especialidades</h2>
-        </section>
+        <AnimatedTechCarousel />
 
         {/*Seção benefícios  */}
         <section className="bg-red-600 mb-6">
