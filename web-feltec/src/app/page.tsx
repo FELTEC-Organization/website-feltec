@@ -8,9 +8,9 @@ import apps from "../../public/apps.png";
 import proto from "../../public/prototipação.png";
 import manuten from "../../public/manutenção.png";
 import tecnologias from "../../public/tecnologias.png";
-import beneficios from "../../public/beneficios.png";
 import "../i18n/locales/i18nfy";
 import { Trans, useTranslation } from "react-i18next";
+import Beneficios from "@/components/benefícios/beneficios";
 
 export default function Home() {
   const { t } = useTranslation();
@@ -91,9 +91,7 @@ export default function Home() {
           />
         </section>
         {/*Seção benefícios  */}
-        <section>
-          <Image src={beneficios} alt="sobre" className="object-contain" />
-        </section>
+       <Beneficios />
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
         FOOTER
