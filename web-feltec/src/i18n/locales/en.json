@@ -1,5 +1,59 @@
 {
-  "title": {
-    "title": "IT solutions for your business"
-  }
+  "heading": "IT solutions for your business\nBoost your results with our specialized services",
+  "cta_button": "Contact us",
+  "about": "About",
+  "about_description": "Feltec Solutions IT is a company specialized in tailor-made technology solutions, focusing on web development, mobile apps, and system prototyping. We combine innovation, performance, and user experience to deliver efficient, secure, and high-impact projects. With a dedicated and passionate team, we help companies evolve digitally, offering personalized services aligned with market trends and demands.",
+  "services": {
+    "title" : "DISCOVER OUR SERVICES",
+    "web": "Website development",
+    "mobile": "App development",
+    "prototype": "Prototyping",
+    "maintenance": "System maintenance",
+    "web_explanation": "We develop custom, responsive, and modern websites focused on the best user experience, search engine optimization, and high performance for your business.",
+    "mobile_explanation": "We create tailor-made mobile applications with intuitive interfaces, high performance, security, and compatibility across different platforms and devices.",
+    "prototype_explanation": "We transform your ideas into interactive and functional prototypes, facilitating validation and improvement of features before final development.",
+    "maintenance_explanation": "We offer specialized technical support, updates, fixes, and continuous improvements to ensure the stability, security, and evolution of your systems."
+  },
+  "contact": {
+    "time": "Monday to Friday 08:00 to 18:00"
+  },
+  "Inicio" : "HOME",
+  "Servicos" : "SERVICES",
+  "Contato" : "CONTACTS",
+  "whoWeAre": {
+    "title": "Who We Are",
+    "description1": "More than a technology company, Feltec is made up of people who believe in innovation as a transformative force. Our essence is to create, evolve and collaborate side by side with clients, partners, and society.",
+    "description2": "We value real connections, ethics in every delivery, and purpose in every line of code.",
+    "mission": {
+      "title": "Mission",
+      "description": "To connect technology and purpose to generate positive impact, with solutions that facilitate and enhance the daily lives of people and companies."
+    },
+    "vision": {
+      "title": "Vision",
+      "description": "To be recognized as a reference in quality and commitment in building smart digital solutions."
+    },
+    "values": {
+      "title": "Values",
+      "description": "Integrity, trust, humility, security, respect, and responsibility."
+    },
+    "social": {
+      "title": "Social",
+      "description": "To promote a better world with our technical knowledge and propagate social responsibility."
+    }
+  },
+  "expertise": {
+    "part1": "Experts in",
+    "part2": "technologies"
+  },
+  "footer": {
+  "logo_alt": "Feltec Logo",
+  "address": "Address",
+  "email": "Email",
+  "phone": "Phone",
+  "hours": "Business Hours",
+  "working_days": "Monday to Friday 08:00 AM to 06:00 PM",
+  "map_title": "Feltec Map",
+  "rights_reserved": "All rights reserved.",
+  "developed_by": "Developed by the FELTEC team"
+}
 }

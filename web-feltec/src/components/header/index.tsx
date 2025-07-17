@@ -6,8 +6,10 @@ import Link from "next/link";
 import Logo from "../../../public/Logo Feltec.png";
 import Options from "../dropDownmenu/dropDownmenu";
 import { Menu } from "lucide-react"; // ícone do hambúrguer
+import { useTranslation } from "react-i18next";
 
 export default function Header() {
+  const { t } = useTranslation();
   const [isTop, setTop] = useState(false);
   const [isMenuOpen, setMenuOpen] = useState(false);
 
@@ -65,9 +67,9 @@ export default function Header() {
       {/* Menu Mobile */}
       {isMenuOpen && (
         <div className="lg:hidden absolute top-16 w-full bg-zinc-300 dark:bg-zinc-900 flex flex-col items-start px-6 py-4 gap-4 z-50 shadow-md">
-          <Link href="/#inicio" onClick={() => setMenuOpen(false)}>INICIO</Link>
-          <Link href="/#servicos" onClick={() => setMenuOpen(false)}>SERVIÇOS</Link>
-          <Link href="/#contatos" onClick={() => setMenuOpen(false)}>CONTATO</Link>
+          <Link href="/#inicio" onClick={() => setMenuOpen(false)}>{t("Inicio")}</Link>
+          <Link href="/#servicos" onClick={() => setMenuOpen(false)}>{t("Servicos")}</Link>
+          <Link href="/#contatos" onClick={() => setMenuOpen(false)}>{t("Contato")}</Link>
           <Options />
         </div>
       )}

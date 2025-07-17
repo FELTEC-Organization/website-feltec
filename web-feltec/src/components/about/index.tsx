@@ -1,20 +1,21 @@
+"use client";
+
+import { useTranslation } from "react-i18next";
 import { HomeProps } from "@/utils/home.type";
 import Image from "next/image";
 
 export function About({ object }: HomeProps) {
+  const { t } = useTranslation();
+
   return (
-    // flex-col por padrão (mobile), e flex-row a partir de md
     <section className="w-full flex flex-col md:flex-row items-center md:items-start gap-6 m-8 pt-14 max-w-[1280px] mx-auto">
-      
-      {/* Texto */}
       <article className="flex flex-col justify-center w-full md:w-1/2 gap-3">
-        <h1 className="text-[34px] font-bold">Sobre</h1>
+        <h1 className="text-[34px] font-bold">{t("about")}</h1>
         <p className="leading-[150%] text-justify">
-          {object.metadata.about.description}
+          {t("about_description")}
         </p>
       </article>
 
-      {/* Imagem */}
       <div className="relative w-full md:w-1/2 h-[300px] md:h-[370px] rounded-[8px] overflow-hidden">
         <Image
           className="object-cover rounded-[8px]"

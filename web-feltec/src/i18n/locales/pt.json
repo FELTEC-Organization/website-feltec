@@ -1,5 +1,60 @@
 {
-  "title": {
-    "title": "Soluções de TI para o seu negócio"
+  "heading": "Soluções de TI para o seu negócio\nImpulsione seus resultados com os nossos serviços especializados",
+  "cta_button": "Fale conosco",
+  "about": "Sobre",
+  "about_description": "A Feltec Solutions IT é uma empresa especializada em soluções tecnológicas sob medida, atuando com foco em desenvolvimento web, mobile e prototipação de sistemas. Unimos inovação, performance e experiência do usuário para entregar projetos eficientes, seguros e de alto impacto. Com uma equipe dedicada e apaixonada por tecnologia, ajudamos empresas a evoluírem digitalmente, oferecendo serviços personalizados que acompanham as tendências e necessidades do mercado atual.",
+  "services": {
+    "title" : "CONHEÇA NOSSOS SERVIÇOS",
+    "web": "Desenvolvimento de sites",
+    "mobile": "Desenvolvimento de app´s",
+    "prototype": "Prototipação",
+    "maintenance": "Manutenção de sistemas",
+    "web_explanation": "Desenvolvemos sites personalizados, responsivos e modernos, com foco na melhor experiência do usuário, otimização para mecanismos de busca e alta performance para o seu negócio.",
+    "mobile_explanation": "Criamos aplicativos móveis sob medida, com interfaces intuitivas, alta performance, segurança e compatibilidade com diferentes plataformas e dispositivos.",
+    "prototype_explanation": "Transformamos suas ideias em protótipos interativos e funcionais, facilitando a validação e o aprimoramento das funcionalidades antes do desenvolvimento final.",
+    "maintenance_explanation": "Oferecemos suporte técnico especializado, atualizações, correções e melhorias contínuas para garantir a estabilidade, segurança e evolução dos seus sistemas."
+  },
+  "contact": {
+    "time": "Segunda á Sexta 08:00 às 18:00"
+  },
+  "Inicio" : "INICIO",
+  "Servicos" : "SERVIÇOS",
+  "Contato" : "CONTATOS",
+  "whoWeAre": {
+    "title": "Quem Somos",
+    "description1": "Mais do que uma empresa de tecnologia, a Feltec é feita por pessoas que acreditam na inovação como força transformadora. Nossa essência está em criar, evoluir e colaborar lado a lado com clientes, parceiros e a sociedade.",
+    "description2": "Valorizamos conexões reais, ética em cada entrega e propósito em cada linha de código.",
+    "mission": {
+      "title": "Missão",
+      "description": "Conectar tecnologia e propósito para gerar impacto positivo, com soluções que facilitam e elevam o dia a dia das pessoas e empresas."
+    },
+    "vision": {
+      "title": "Visão",
+      "description": "Ser reconhecida como uma referência em qualidade e compromisso na construção de soluções digitais inteligentes."
+    },
+    "values": {
+      "title": "Valores",
+      "description": "Integridade, confiança, humildade, segurança, respeito e responsabilidade."
+    },
+    "social": {
+      "title": "Social",
+      "description": "Promover um mundo melhor com nossos conhecimentos técnicos, e propagar a responsabilidade social."
+    }
+  },
+  "expertise": {
+    "part1": "Especialistas em",
+    "part2": "tecnologias"
+  },
+  "footer": {
+    "logo_alt": "Logo Feltec",
+    "address": "Endereço",
+    "email": "Email",
+    "phone": "Telefone",
+    "hours": "Funcionamento",
+    "working_days": "Segunda à Sexta 08:00 às 18:00",
+    "map_title": "Mapa Feltec",
+    "rights_reserved": "Todos os direitos reservados.",
+    "developed_by": "Desenvolvido pela equipe FELTEC"
   }
 }
+

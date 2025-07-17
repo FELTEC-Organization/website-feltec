@@ -13,9 +13,11 @@ import {
   Linkedin,
 } from "lucide-react";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 
 export default function Footer({ object }: HomeProps) {
   const contact = object.metadata.contact;
+  const { t } = useTranslation();
 
   return (
     <footer className="bg-zinc-900 text-gray-300 px-6 py-6 text-sm">
@@ -26,7 +28,7 @@ export default function Footer({ object }: HomeProps) {
           <Link href="/" className="flex items-center gap-3">
             <Image
               src={Logo}
-              alt="Feltec Logo"
+              alt={t("footer.logo_alt")} // Exemplo: "Logo Feltec"
               width={80}
               height={80}
               className="object-contain"
@@ -58,34 +60,34 @@ export default function Footer({ object }: HomeProps) {
         <div className="flex flex-col gap-4">
           <ContactItem
             icon={<MapPin size={16} />}
-            title="Endereço"
+            title={t("footer.address")}
             text={contact.address}
           />
           <ContactItem
             icon={<Mail size={16} />}
-            title="Email"
+            title={t("footer.email")}
             text={contact.email}
             isLink
             linkHref={`mailto:${contact.email}`}
           />
           <ContactItem
             icon={<Phone size={16} />}
-            title="Telefone"
+            title={t("footer.phone")}
             text={contact.phone}
             isLink
             linkHref={`tel:${contact.phone.replace(/\D/g, "")}`}
           />
           <ContactItem
             icon={<AlarmClock size={16} />}
-            title="Funcionamento"
-            text={contact.time}
+            title={t("footer.hours")}
+            text={t("footer.working_days")}
           />
         </div>
 
         {/* MAPA */}
         <div className="rounded-md overflow-hidden border border-zinc-700 lg:max-w-96">
           <iframe
-            title="Mapa Feltec"
+            title={t("footer.map_title")} // "Mapa Feltec"
             src="https://maps.google.com/maps?q=Av.%20Itavuvu,%2011777,%20Sorocaba,%20SP&t=&z=13&ie=UTF8&iwloc=&output=embed"
             width="100%"
             height="100%"
@@ -101,15 +103,14 @@ export default function Footer({ object }: HomeProps) {
       {/* COPYRIGHT */}
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-xs text-zinc-500">
         <span>
-          © {new Date().getFullYear()} FELTEC. Todos os direitos reservados.
+          © {new Date().getFullYear()} FELTEC. {t("footer.rights_reserved")}
         </span>
-        <span>Desenvolvido pela equipe FELTEC</span>
+        <span>{t("footer.developed_by")}</span>
       </div>
     </footer>
   );
 }
 
-// Componente de item de contato
 function ContactItem({
   icon,
   title,
@@ -140,7 +141,6 @@ function ContactItem({
   );
 }
 
-// Componente de ícone de rede social com hover
 function SocialIcon({
   href,
   icon,

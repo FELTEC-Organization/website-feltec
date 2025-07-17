@@ -2,7 +2,9 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useEffect, useState, useRef } from "react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
+import { useTranslation } from "react-i18next";
 
 const techs = [
   { src: "/techs/angular.png", label: "Angular" },
@@ -33,6 +35,9 @@ const techs = [
 const rows = 2;
 
 export default function AnimatedTechCarousel() {
+  const { t } = useTranslation();
+
+  // Divide os techs em 2 linhas pra rolar horizontalmente
   const techRows = Array.from({ length: rows }, (_, rowIndex) =>
     techs.slice(
       rowIndex * Math.ceil(techs.length / rows),
@@ -40,13 +45,62 @@ export default function AnimatedTechCarousel() {
     )
   );
 
+  const targetNumber = 20; // número final
+  const [count, setCount] = useState(0);
+  const [started, setStarted] = useState(false); // se a animação já começou
+  const ref = useRef<HTMLDivElement>(null);
+
+  // Detecta quando a div com o número fica visível na tela
+  useEffect(() => {
+    if (!ref.current) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !started) {
+            setStarted(true);
+          }
+        });
+      },
+      { threshold: 0.5 } // 50% visível
+    );
+
+    observer.observe(ref.current);
+
+    return () => {
+      if (ref.current) observer.unobserve(ref.current);
+    };
+  }, [started]);
+
+  // Incrementa o contador só se a animação tiver começado
+  useEffect(() => {
+    if (!started) return;
+
+    if (count >= targetNumber) return;
+
+    const interval = setInterval(() => {
+      setCount((prev) => {
+        if (prev >= targetNumber) {
+          clearInterval(interval);
+          return prev;
+        }
+        return prev + 1;
+      });
+    }, 50);
+
+    return () => clearInterval(interval);
+  }, [started, count]);
+
   return (
     <div className="flex flex-col md:flex-row items-start justify-between w-full px-4 md:px-16 py-12 gap-12">
-      {/* Texto à esquerda */}
-      <div className="w-full md:w-1/3 text-center md:text-left">
+      {/* Texto à esquerda com o número animado */}
+      <div
+        className="w-full md:w-1/3 text-center md:text-left"
+        ref={ref} // referencia pra detectar visibilidade
+      >
         <h1 className="text-3xl md:text-5xl font-bold text-black dark:text-white leading-tight">
-          Especialistas em <br />
-          <span className="text-blue-600">+20</span> tecnologias
+          {t("expertise.part1")} <br />
+          <span className="text-blue-600">+{count}</span> {t("expertise.part2")}
         </h1>
       </div>
 

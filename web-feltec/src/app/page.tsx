@@ -1,68 +1,29 @@
-import Image from "next/image";
-import beneficios from "../../public/beneficios.png";
+"use client";
+
+import React, { useState, useEffect } from "react";
+import HomeComponent from "../components/home/index";
 import { getDataHome } from "@/utils/actions/get-data";
-import { useEffect, useState } from "react";
-import { HomeProps } from "@/utils/home.type";
-import { Hero } from "@/components/hero";
-import Container from "@/components/container";
-import { About } from "@/components/about";
-import Services from "@/components/servicing";
-import Footer from "@/components/footer";
-import AnimatedTechCarousel from "@/components/techStacks";
-import WhoWeAre from "@/components/whoWeAre";
-import BenefitsSection from "@/components/benefitCards";
-import AnimatedSection from "@/components/animatedSection";
+import Lottie from "lottie-react";
+import loadingAnimation from "../../public/loading.json";
 
-export default async function Home() {
-  const { object }: HomeProps = await getDataHome();
+export default function Home() {
+  const [object, setObject] = useState(null);
 
-  return (
-    <div>
-      <main className="dark:text-white dark:bg-black pt-16">
-        {/*Seção capa  */}
-        <section id="inicio">
-          <Hero
-            heading={object.metadata.heading}
-            buttonTitle={object.metadata.cta_button.title}
-            buttonUrl={object.metadata.cta_button.url}
-            bannerUrl={object.metadata.banner.url}
-          />
-        </section>
+  useEffect(() => {
+    getDataHome().then((data) => setObject(data.object));
+  }, []);
 
-        {/*Seção sobre  */}
-        <AnimatedSection>
-          <Container>
-            <About object={object} />
-          </Container>
-        </AnimatedSection>
+  if (!object) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <Lottie
+          animationData={loadingAnimation}
+          loop={true}
+          style={{ width: 150, height: 150 }}
+        />
+      </div>
+    );
+  }
 
-        {/* Seção serviços */}
-        <AnimatedSection>
-          <section id="servicos">
-            <Services object={object} />
-          </section>
-        </AnimatedSection>
-
-        {/* Seção quem somos  */}
-        <AnimatedSection>
-          <WhoWeAre />
-        </AnimatedSection>
-
-        {/*Seção tecnologias */}
-        <AnimatedSection>
-          <AnimatedTechCarousel />
-        </AnimatedSection>
-
-        {/*Seção benefícios  */}
-        <AnimatedSection>
-          <BenefitsSection />
-        </AnimatedSection>
-      </main>
-
-      {/* Seção footer/contatos */}
-      <section id="contatos">
-        <Footer object={object} />
-      </section>
-    </div>
-  );
+  return <HomeComponent object={object} />;
 }
