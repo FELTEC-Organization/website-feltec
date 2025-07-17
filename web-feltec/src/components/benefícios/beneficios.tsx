@@ -44,33 +44,34 @@ export default function Beneficios() {
             <h2 className="text-2xl font-semibold text-center max-w-2xl dark:text-white">
                 Quais são os benefícios que a terceirização de TI traz para seu negócio?
             </h2>
-
-            <Carousel opts={{ align: "start" }} orientation="horizontal" className="w-full max-w-6xl relative">
-                <CarouselContent className="">
-                    {beneficios.map((beneficio, index) => (
-                        <CarouselItem key={index} className="basis-[300px] md:basis-[350px] lg:basis-[400px]">
-                            <motion.div
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.98 }}
-                                className="p-2"
-                            >
-                                <Card className="min-h-[340px] flex flex-col justify-between items-center rounded-2xl border border-muted shadow-md transition hover:shadow-lg dark:bg-neutral-900 dark:bg-[#014aaa]">
-                                    <CardContent className="flex flex-col gap-4 p-6 text-center justify-center items-center">
-                                        <BadgeCheck className="w-6 h-6 text-green-600" />
-                                        <span className="text-2xl font-bold text-primary dark:text-green-400"></span>
-                                        <h3 className="text-lg font-semibold dark:text-white">{beneficio.titulo}</h3>
-                                        <p className="text-sm text-muted-foreground dark:text-gray-400">
-                                            {beneficio.descricao}
-                                        </p>
-                                    </CardContent>
-                                </Card>
-                            </motion.div>
-                        </CarouselItem>
-                    ))}
-                </CarouselContent>
-                <CarouselPrevious className="absolute -translate-y-1/2 m-2" />
-                <CarouselNext className="absolute -translate-y-1/2 m-2" />
-            </Carousel>
+            <div className="relative w-full max-w-7xl overflow-visible">
+                <Carousel opts={{ align: "start" }} orientation="horizontal" className="w-full relative">
+                    <CarouselContent className="">
+                        {beneficios.map((beneficio, index) => (
+                            <CarouselItem key={index} className="basis-[300px] md:basis-[350px] lg:basis-[400px]">
+                                <motion.div
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.98 }}
+                                    className="p-2"
+                                >
+                                    <Card className="min-h-[340px] flex flex-col justify-between items-center rounded-2xl border border-muted shadow-md transition hover:shadow-lg dark:bg-neutral-900 dark:bg-[#014aaa]">
+                                        <CardContent className="flex flex-col gap-4 p-6 text-center justify-center items-center m-4">
+                                            <BadgeCheck className="w-6 h-6 text-green-600" />
+                                            <span className="text-2xl font-bold text-primary dark:text-green-400"></span>
+                                            <h3 className="text-lg font-semibold dark:text-white">{beneficio.titulo}</h3>
+                                            <p className="p-4 text-sm text-muted-foreground dark:text-gray-400">
+                                                {beneficio.descricao}
+                                            </p>
+                                        </CardContent>
+                                    </Card>
+                                </motion.div>
+                            </CarouselItem>
+                        ))}
+                    </CarouselContent>
+                    <CarouselPrevious className="absolute top-1/2 -translate-y-1/2 left-0 z-10 flex px-1 m-3" />
+                    <CarouselNext className="absolute top-1/2 -translate-y-1/2 right-0 z-10 flex px-1 m-3" />
+                </Carousel>
+            </div>
         </div>
     );
 }
