@@ -1,9 +1,6 @@
 import Image from "next/image";
-import sobre from "../../public/elemento-sobre.png";
 import beneficios from "../../public/beneficios.png";
 import { getDataHome } from "@/utils/actions/get-data";
-// import "../i18n/locales/i18nfy";
-// import { Trans, useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
 import { HomeProps } from "@/utils/home.type";
 import { Hero } from "@/components/hero";
@@ -12,6 +9,9 @@ import { About } from "@/components/about";
 import Services from "@/components/servicing";
 import Footer from "@/components/footer";
 import AnimatedTechCarousel from "@/components/techStacks";
+import WhoWeAre from "@/components/whoWeAre";
+import BenefitsSection from "@/components/benefitCards";
+import AnimatedSection from "@/components/animatedSection";
 
 export default async function Home() {
   const { object }: HomeProps = await getDataHome();
@@ -20,47 +20,49 @@ export default async function Home() {
     <div>
       <main className="dark:text-white dark:bg-black pt-16">
         {/*Seção capa  */}
-        <Hero
-          heading={object.metadata.heading}
-          buttonTitle={object.metadata.cta_button.title}
-          buttonUrl={object.metadata.cta_button.url}
-          bannerUrl={object.metadata.banner.url}
-        />
+        <section id="inicio">
+          <Hero
+            heading={object.metadata.heading}
+            buttonTitle={object.metadata.cta_button.title}
+            buttonUrl={object.metadata.cta_button.url}
+            bannerUrl={object.metadata.banner.url}
+          />
+        </section>
 
         {/*Seção sobre  */}
-        <Container>
-          <About object={object} />
-        </Container>
+        <AnimatedSection>
+          <Container>
+            <About object={object} />
+          </Container>
+        </AnimatedSection>
 
         {/* Seção serviços */}
-        <Services object={object} />
+        <AnimatedSection>
+          <section id="servicos">
+            <Services object={object} />
+          </section>
+        </AnimatedSection>
 
         {/* Seção quem somos  */}
-        <section className="bg-yellow-600 mb-6">
-          <h2 className="">QUEM SOMOS</h2>
-          <p>
-            A Feltec Solutions IT é uma empresa especializada em soluções
-            tecnológicas sob medida, atuando com foco em desenvolvimento web,
-            mobile e prototipação de sistemas. Unimos inovação, performance e
-            experiência do usuário para entregar projetos eficientes, seguros e
-            de alto impacto. Com uma equipe dedicada e apaixonada por
-            tecnologia, ajudamos empresas a evoluírem digitalmente, oferecendo
-            serviços personalizados que acompanham as tendências e necessidades
-            do mercado atual
-          </p>
-          <Image src={sobre} alt="Quem somos" className="object-contain" />
-        </section>
+        <AnimatedSection>
+          <WhoWeAre />
+        </AnimatedSection>
 
         {/*Seção tecnologias */}
-        <AnimatedTechCarousel />
+        <AnimatedSection>
+          <AnimatedTechCarousel />
+        </AnimatedSection>
 
         {/*Seção benefícios  */}
-        <section className="bg-red-600 mb-6">
-          <Image src={beneficios} alt="sobre" className="object-contain" />
-        </section>
+        <AnimatedSection>
+          <BenefitsSection />
+        </AnimatedSection>
       </main>
 
-      <Footer object={object} />
+      {/* Seção footer/contatos */}
+      <section id="contatos">
+        <Footer object={object} />
+      </section>
     </div>
   );
 }

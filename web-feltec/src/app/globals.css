@@ -147,6 +147,28 @@
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.552 0.016 285.938);
 }
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-track {
+  /* Mesma cor do fundo da página */
+  background-color: var(--color-feltec-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #339CFF;
+  border-radius: 9999px;
+  box-shadow: 0 0 8px 2px rgba(51, 156, 255, 0.5);
+  transition: background-color 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #1a6ed8;
+  box-shadow: 0 0 12px 4px rgba(26, 110, 216, 0.7);
+}
 
 button {
   background-color: var(--color-feltec-primary);
@@ -162,6 +184,10 @@ button:hover {
 body {
   background-color: var(--color-feltec-light);
   color: var(--color-feltec-text);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 @layer base {

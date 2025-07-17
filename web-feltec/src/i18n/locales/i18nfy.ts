@@ -8,14 +8,14 @@ const resources = {
   pt: { translation: ptTranslation },
 };
 
-i18n.use(initReactI18next).init({
-  resources,
-  debug: true,
-  lng: "pt",
-  fallbackLng: "en",
-  interpolation: {
-    escapeValue: false,
-  },
-});
+i18n
+  .use(initReactI18next) // <-- ESSENCIAL para React funcionar com i18next
+  .init({
+    resources,
+    lng: "pt",
+    fallbackLng: "en",
+    interpolation: { escapeValue: false },
+    debug: true,
+  });
 
 export default i18n;

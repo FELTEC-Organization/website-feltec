@@ -18,52 +18,44 @@ export default function Footer({ object }: HomeProps) {
   const contact = object.metadata.contact;
 
   return (
-    <footer className="bg-zinc-900 text-gray-300 py-6 px-4 w-full text-sm">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
-        
-        {/* Logo + redes sociais - Centralizado e compacto */}
-        <div className="flex flex-col items-center text-center gap-20">
-          <Link href="/" className="flex items-center gap-2">
+    <footer className="bg-zinc-900 text-gray-300 px-6 py-6 text-sm">
+      {/* Container principal com grid adaptável */}
+      <div className="max-w-10/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="flex flex-col items-center gap-4 text-center">
+          {/* LOGO + TEXTO */}
+          <Link href="/" className="flex items-center gap-3">
             <Image
               src={Logo}
               alt="Feltec Logo"
-              width={70}
-              height={70}
+              width={80}
+              height={80}
               className="object-contain"
             />
             <span className="text-white text-4xl font-bold">FELTEC</span>
           </Link>
 
-          <div className="flex gap-4 text-blue-500">
-            <a
+          {/* ÍCONES SOCIAIS - ALINHADOS AO CENTRO */}
+          <div className="flex gap-4 justify-center text-feltec-primary-light">
+            <SocialIcon
               href="https://github.com/FELTEC-Organization"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub"
-            >
-              <Github size={20} />
-            </a>
-            <a
-              href="https://instagram.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-            >
-              <Instagram size={20} />
-            </a>
-            <a
+              icon={<Github size={30} />}
+              label="GitHub"
+            />
+            <SocialIcon
+              href="https://www.instagram.com/feltec_solutions"
+              icon={<Instagram size={30} />}
+              label="Instagram"
+            />
+            <SocialIcon
               href="https://linkedin.com/company/feltec-solutions-it"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-            >
-              <Linkedin size={20} />
-            </a>
+              icon={<Linkedin size={30} />}
+              label="LinkedIn"
+            />
           </div>
         </div>
 
-        {/* Contatos com ícones - Compactado */}
-        <div className="flex flex-col gap-3">
+        {/* CONTATOS */}
+        <div className="flex flex-col gap-4">
           <ContactItem
             icon={<MapPin size={16} />}
             title="Endereço"
@@ -90,33 +82,34 @@ export default function Footer({ object }: HomeProps) {
           />
         </div>
 
-        {/* Mapa - Altura reduzida */}
-        <div className="rounded-md overflow-hidden border w-full h-[140px]">
+        {/* MAPA */}
+        <div className="rounded-md overflow-hidden border border-zinc-700 lg:max-w-96">
           <iframe
             title="Mapa Feltec"
             src="https://maps.google.com/maps?q=Av.%20Itavuvu,%2011777,%20Sorocaba,%20SP&t=&z=13&ie=UTF8&iwloc=&output=embed"
             width="100%"
             height="100%"
-            allowFullScreen
             loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
+            className="border-0"
           />
         </div>
       </div>
 
-      {/* Linha divisória fina */}
-      <hr className="border-zinc-700 my-4" />
+      {/* DIVISOR */}
+      <hr className="my-6 border-zinc-700" />
 
-      {/* Rodapé simples e pequeno */}
-      <div className="max-w-7xl mx-auto flex justify-between text-xs text-zinc-500 flex-wrap">
-        <span>© {new Date().getFullYear()} FELTEC, todos direitos reservados.</span>
-        <span>Desenvolvido por equipe FELTEC</span>
+      {/* COPYRIGHT */}
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-xs text-zinc-500">
+        <span>
+          © {new Date().getFullYear()} FELTEC. Todos os direitos reservados.
+        </span>
+        <span>Desenvolvido pela equipe FELTEC</span>
       </div>
     </footer>
   );
 }
 
-// Componente auxiliar para itens de contato
+// Componente de item de contato
 function ContactItem({
   icon,
   title,
@@ -131,18 +124,41 @@ function ContactItem({
   linkHref?: string;
 }) {
   return (
-    <div className="flex items-start gap-2">
-      <div className="mt-[2px] text-blue-500">{icon}</div>
+    <div className="flex items-start gap-3">
+      <div className="mt-1 text-feltec-primary-light">{icon}</div>
       <div>
         <h4 className="font-semibold text-white leading-tight">{title}</h4>
         {isLink ? (
-          <a href={linkHref} className="hover:underline leading-tight">
+          <a href={linkHref} className="hover:underline text-zinc-300">
             {text}
           </a>
         ) : (
-          <p className="leading-tight">{text}</p>
+          <p className="text-zinc-400">{text}</p>
         )}
       </div>
     </div>
+  );
+}
+
+// Componente de ícone de rede social com hover
+function SocialIcon({
+  href,
+  icon,
+  label,
+}: {
+  href: string;
+  icon: React.ReactNode;
+  label: string;
+}) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={label}
+      className="hover:text-blue-600 transition-colors"
+    >
+      {icon}
+    </a>
   );
 }

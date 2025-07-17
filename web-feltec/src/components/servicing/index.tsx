@@ -22,7 +22,7 @@ export default function Services({ object }: HomeProps) {
       </h2>
 
       {/* Grid dos cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {services.map((service, index) => {
           const isOpen = openIndex === index;
 
@@ -50,7 +50,7 @@ export default function Services({ object }: HomeProps) {
               {/* Conteúdo expansível */}
               <div
                 className={`px-4 pb-4 text-gray-700 dark:text-gray-300 text-left transition-max-height duration-300 ease-in-out
-                  ${isOpen ? "opacity-100 mt-2 max-h-40" : "opacity-0 max-h-0"}`}
+                  ${isOpen ? "opacity-100 mt-2 max-h-62" : "opacity-0 max-h-0"}`}
                 style={{ overflow: "hidden" }}
               >
                 {getServiceExplanation(service.description)}

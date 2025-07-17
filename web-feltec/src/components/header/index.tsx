@@ -4,10 +4,12 @@ import { useCallback, useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Logo from "../../../public/Logo Feltec.png";
-import DropdownMenuCheckboxes from "../dropDownmenu/dropDownmenu";
+import Options from "../dropDownmenu/dropDownmenu";
+import { Menu } from "lucide-react"; // ícone do hambúrguer
 
 export default function Header() {
   const [isTop, setTop] = useState(false);
+  const [isMenuOpen, setMenuOpen] = useState(false);
 
   const handleScroll = useCallback(() => {
     setTop(window.scrollY > 10);
@@ -20,37 +22,55 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 z-90 w-full h-16 text-zinc-900 dark:text-white shadow transition-colors duration-300
-        ${
-          isTop
-            ? "bg-zinc-300/70 dark:bg-zinc-900/70 backdrop-blur-md shadow-2xl shadow-black"
-            : "bg-zinc-300 dark:bg-zinc-900"
+      className={`fixed top-0 z-50 w-full h-16 text-zinc-900 dark:text-white transition-colors duration-300
+        ${isTop
+          ? "bg-zinc-300/70 dark:bg-zinc-900/70 backdrop-blur-md shadow-2xl shadow-black"
+          : "bg-zinc-300 dark:bg-zinc-900"
         }`}
     >
-      <div className="w-full h-full grid grid-cols-4 items-center justify-between">
-        {/* Área do logo + FELTEC */}
-        <span className="w-60 h-10 flex items-center justify-start font-bold text-2xl pl-4">
-          <Link href="/" className="flex items-center gap-2">
-            <Image
-              src={Logo}
-              alt="Feltec Logo"
-              width={50}
-              height={50}
-              className="object-contain"
-            />
-            {/* Texto ao lado da logo */}
-            <span className="text-zinc-900 dark:text-white">FELTEC</span>
-          </Link>
-        </span>
+      <div className="w-full h-full mx-auto px-4 flex items-center justify-between">
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-2">
+          <Image
+            src={Logo}
+            alt="Feltec Logo"
+            width={40}
+            height={40}
+            className="object-contain"
+          />
+          <span className="text-xl font-bold text-zinc-900 dark:text-white">FELTEC</span>
+        </Link>
 
-        <nav className="flex items-center gap-8 ml-auto col-span-3 pr-4">
-          <Link href="/" className="transition-transform duration-[700ms] hover:scale-115">HOME</Link>
-          <Link href="/#servicos" className="transition-transform duration-[700ms] hover:scale-115">SERVIÇOS</Link>
-          <Link href="/#contatos" className="transition-transform duration-[700ms] hover:scale-115">CONTATO</Link>
-          <div className="text-zinc-900 dark:text-white"></div>
-          <DropdownMenuCheckboxes />
+        {/* Navegação centralizada em telas grandes */}
+        <nav className="hidden lg:flex items-center gap-8 absolute left-1/2 transform -translate-x-1/2">
+          <Link href="/#inicio" className="transition-transform duration-700 hover:scale-110">INICIO</Link>
+          <Link href="/#servicos" className="transition-transform duration-700 hover:scale-110">SERVIÇOS</Link>
+          <Link href="/#contatos" className="transition-transform duration-700 hover:scale-110">CONTATO</Link>
         </nav>
+
+        {/* Dropdown tema - visível em qualquer tela */}
+        <div className="hidden lg:block ml-auto">
+          <Options />
+        </div>
+
+        {/* Botão de menu mobile/tablet */}
+        <button
+          className="lg:hidden ml-auto"
+          onClick={() => setMenuOpen(!isMenuOpen)}
+        >
+          <Menu size={28} />
+        </button>
       </div>
+
+      {/* Menu Mobile */}
+      {isMenuOpen && (
+        <div className="lg:hidden absolute top-16 w-full bg-zinc-300 dark:bg-zinc-900 flex flex-col items-start px-6 py-4 gap-4 z-50 shadow-md">
+          <Link href="/#inicio" onClick={() => setMenuOpen(false)}>INICIO</Link>
+          <Link href="/#servicos" onClick={() => setMenuOpen(false)}>SERVIÇOS</Link>
+          <Link href="/#contatos" onClick={() => setMenuOpen(false)}>CONTATO</Link>
+          <Options />
+        </div>
+      )}
     </header>
   );
 }

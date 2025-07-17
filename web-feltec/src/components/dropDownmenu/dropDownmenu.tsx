@@ -1,45 +1,47 @@
-import {
-  DropdownMenuCheckboxItemProps,
-  DropdownMenuItem,
-} from "@radix-ui/react-dropdown-menu";
+"use client";
+
 import { ThemeButton } from "../themechange/themeButton";
-import { Button } from "../ui/button";
-import * as React from "react";
 import {
   DropdownMenu,
-  DropdownMenuCheckboxItem,
   DropdownMenuContent,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
+  DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from "../ui/dropdown-menu";
+import { useTranslation } from "react-i18next";
+import { Button } from "../ui/button";
 import { Settings } from "lucide-react";
-import LanguageSelector from "../changeLanguage/changeLanguage";
 
-type Checked = DropdownMenuCheckboxItemProps["checked"];
+const LanguageSelector: React.FC = () => {
+  const { i18n } = useTranslation();
 
-function DropdownMenuCheckboxes() {
-  //função para itens de checkbox const [showThemeButton, setShowThemeButton] = React.useState<Checked>(true);
+  const handleChangeLanguage = (lang: string) => {
+    i18n.changeLanguage(lang);
+  };
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon">
-          <Settings className="h-4 w-4" />
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56">
-        <DropdownMenuLabel>Configurações</DropdownMenuLabel>
-        <DropdownMenuSeparator />
-        <DropdownMenuItem asChild>
-          <ThemeButton />
-        </DropdownMenuItem>
-        <DropdownMenuItem asChild>
-          <LanguageSelector />
-        </DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
-  );
-}
+    <div className="flex items-center gap-4">
+      {/* Botão de tema (claro/escuro) */}
+      <ThemeButton />
 
-export default DropdownMenuCheckboxes;
+      {/* Menu suspenso de idiomas */}
+      <DropdownMenu>
+        <DropdownMenuTrigger asChild>
+          <Button variant="outline" size="icon">
+            <Settings className="h-4 w-4" />
+          </Button>
+        </DropdownMenuTrigger>
+
+        <DropdownMenuContent className="w-56">
+          <DropdownMenuItem onClick={() => handleChangeLanguage("pt")}>
+            🇧🇷 Português (PT)
+          </DropdownMenuItem>
+          <DropdownMenuItem onClick={() => handleChangeLanguage("en")}>
+            🇺🇸 English (EN)
+          </DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
+    </div>
+  );
+};
+
+export default LanguageSelector;
