@@ -55,6 +55,34 @@
     "map_title": "Mapa Feltec",
     "rights_reserved": "Todos os direitos reservados.",
     "developed_by": "Desenvolvido pela equipe FELTEC"
-  }
+  },
+  "benefits": {
+  "title": "Quais são os benefícios que a terceirização de TI traz para seu negócio?",
+  "items": [
+    {
+      "titulo": "Expertise e tecnologia de ponta",
+      "descricao": "Tenha acesso a conhecimento especializado, tecnologias avançadas e tendências do mercado."
+    },
+    {
+      "titulo": "Redução de Custos",
+      "descricao": "Terceirizar resulta em uma economia significativa nos custos operacionais e de pessoal."
+    },
+    {
+      "titulo": "Foco no Core Business",
+      "descricao": "Deixe o TI nas mãos de especialistas e foque no que realmente importa."
+    },
+    {
+      "titulo": "Mais Segurança",
+      "descricao": "Profissionais preparados para proteger sua infraestrutura e dados."
+    },
+    {
+      "titulo": "Atualização Constante",
+      "descricao": "Equipe sempre atualizada com as melhores práticas do mercado."
+    },
+    {
+      "titulo": "Escalabilidade",
+      "descricao": "Adapte sua TI conforme seu crescimento, de forma flexível e rápida."
+    }
+  ]
 }
-
+}

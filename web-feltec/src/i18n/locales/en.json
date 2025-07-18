@@ -55,5 +55,34 @@
   "map_title": "Feltec Map",
   "rights_reserved": "All rights reserved.",
   "developed_by": "Developed by the FELTEC team"
+  },
+  "benefits": {
+  "title": "What are the benefits that IT outsourcing brings to your business?",
+  "items": [
+    {
+      "titulo": "Expertise and cutting-edge technology",
+      "descricao": "Gain access to expert knowledge, advanced technologies, and market trends."
+    },
+    {
+      "titulo": "Cost Reduction",
+      "descricao": "Outsourcing results in significant savings in operational and personnel costs."
+    },
+    {
+      "titulo": "Focus on Core Business",
+      "descricao": "Leave IT to specialists and focus on what really matters."
+    },
+    {
+      "titulo": "More Security",
+      "descricao": "Professionals prepared to protect your infrastructure and data."
+    },
+    {
+      "titulo": "Constant Updates",
+      "descricao": "A team always up-to-date with the best practices in the market."
+    },
+    {
+      "titulo": "Scalability",
+      "descricao": "Adapt your IT as you grow, in a flexible and fast way."
+    }
+  ]
 }
 }
