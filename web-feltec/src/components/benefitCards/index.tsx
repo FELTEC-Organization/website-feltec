@@ -75,8 +75,8 @@ export default function BenefitCards() {
               -translate-y-1/2 z-30
               p-2 sm:p-3
               rounded-full
-              bg-white/90 dark:bg-neutral-800/90
-              hover:bg-white dark:hover:bg-neutral-700
+              bg-feltec-primary-light dark:bg-feltec-primary-light
+              hover:bg-feltec-primary dark:hover:bg-feltec-primary
               shadow-md transition
             "
           />
@@ -87,8 +87,8 @@ export default function BenefitCards() {
               -translate-y-1/2 z-30
               p-2 sm:p-3
               rounded-full
-              bg-white/90 dark:bg-neutral-800/90
-              hover:bg-white dark:hover:bg-neutral-700
+              bg-feltec-primary-light dark:bg-feltec-primary-light
+              hover:bg-feltec-primary dark:hover:bg-feltec-primary
               shadow-md transition
             "
           />

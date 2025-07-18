@@ -21,7 +21,7 @@ const techs = [
   { src: "/techs/docker.png", label: "Docker" },
   { src: "/techs/node.png", label: "Node.js" },
   { src: "/techs/git.png", label: "Git" },
-  { src: "/techs/html2.png", label: "HTML" },
+  { src: "/techs/html.png", label: "HTML" },
   { src: "/techs/css.png", label: "CSS" },
   { src: "/techs/tailwindcss.png", label: "Tailwind CSS" },
   { src: "/techs/javascript.png", label: "JavaScript" },
@@ -102,16 +102,16 @@ export default function AnimatedTechCarousel() {
       >
         <h1 className="text-3xl md:text-5xl font-bold text-black dark:text-white leading-tight">
           {t("expertise.part1")} <br />
-          <span className="text-blue-600">+{count}</span> {t("expertise.part2")}
+          <span className="text-blue-600 text-4xl md:text-6xl">+{count}</span> {t("expertise.part2")}
         </h1>
       </div>
 
       {/* Ícones com máscara de gradiente */}
-      <div className="w-full md:w-2/3 flex flex-col gap-8 overflow-hidden relative">
+      <div className="w-full md:w-2/3 flex flex-col gap-8 relative">
         {techRows.map((rowTechs, rowIndex) => (
           <div
             key={rowIndex}
-            className="w-full overflow-hidden"
+            className="w-full overflow-hidden pb-5"
             style={{
               WebkitMaskImage:
                 "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
@@ -133,7 +133,7 @@ export default function AnimatedTechCarousel() {
               {rowTechs.concat(rowTechs).map((tech, i) => (
                 <Tooltip key={`${rowIndex}-${i}`}>
                   <TooltipTrigger asChild>
-                    <div className="w-20 h-20 md:w-28 md:h-28 flex-shrink-0 flex items-center justify-center rounded-full bg-feltec-light dark:bg-feltec-dark shadow-lg hover:scale-110 transition-transform duration-300 my-2">
+                    <div className="w-20 h-20 md:w-28 md:h-28 flex-shrink-0 flex items-center justify-center rounded-full bg-feltec-light dark:bg-feltec-dark shadow-lg shadow-feltec-muted hover:scale-110 transition-transform duration-300 my-2">
                       <div className="w-14 h-14 md:w-20 md:h-20 relative">
                         <Image
                           src={tech.src}

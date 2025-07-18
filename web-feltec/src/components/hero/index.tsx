@@ -20,7 +20,7 @@ export function Hero({ firstLine, restText, bannerUrl, buttonTitle, buttonUrl }:
         <a
           target="_blank"
           href={buttonUrl}
-          className="inline-block mt-6 bg-blue-600 hover:bg-blue-800 text-white font-semibold px-6 py-3 rounded-md transition"
+          className="inline-block mt-6 bg-feltec-primary hover:bg-feltec-primary-dark text-white font-semibold px-6 py-3 rounded-md transition"
           rel="noreferrer"
         >
           {buttonTitle}

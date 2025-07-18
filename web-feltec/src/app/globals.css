@@ -170,17 +170,6 @@
   box-shadow: 0 0 12px 4px rgba(26, 110, 216, 0.7);
 }
 
-button {
-  background-color: var(--color-feltec-primary);
-  color: var(--color-feltec-white);
-  border: none;
-  transition: background 0.3s;
-}
-
-button:hover {
-  background-color: var(--color-feltec-primary-dark);
-}
-
 html {
   scroll-behavior: smooth;
 }
