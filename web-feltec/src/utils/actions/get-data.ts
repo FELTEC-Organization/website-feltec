@@ -7,7 +7,7 @@ export async function getDataHome() {
         }
 
         return res.json();
-    } catch (error) {
+    } catch {
         throw new Error("Failed to fetch data")
     }
 }

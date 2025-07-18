@@ -54,23 +54,25 @@ export default function AnimatedTechCarousel() {
   useEffect(() => {
     if (!ref.current) return;
 
+    const element = ref.current;
+
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && !started) {
-            setStarted(true);
-          }
-        });
-      },
-      { threshold: 0.5 } // 50% visível
-    );
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !started) {
+          setStarted(true);
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
 
-    observer.observe(ref.current);
+  observer.observe(element);
 
-    return () => {
-      if (ref.current) observer.unobserve(ref.current);
-    };
-  }, [started]);
+  return () => {
+    observer.unobserve(element);
+  };
+}, [started]);
 
   // Incrementa o contador só se a animação tiver começado
   useEffect(() => {
