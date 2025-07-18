@@ -4,6 +4,7 @@ import { useState } from "react";
 import { HomeProps } from "@/utils/home.type";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
+import { ChevronDown } from "lucide-react";
 
 export default function Services({ object }: HomeProps) {
   const services = object.metadata.services;
@@ -16,19 +17,19 @@ export default function Services({ object }: HomeProps) {
   }
 
   function getServiceTitleKey(description: string): string {
-  switch (description) {
-    case "Desenvolvimento de sites":
-      return "services.web";
-    case "Desenvolvimento de app´s":
-      return "services.mobile";
-    case "Prototipação":
-      return "services.prototype";
-    case "Manutenção de sistemas":
-      return "services.maintenance";
-    default:
-      return "services.default";
+    switch (description) {
+      case "Desenvolvimento de sites":
+        return "services.web";
+      case "Desenvolvimento de app´s":
+        return "services.mobile";
+      case "Prototipação":
+        return "services.prototype";
+      case "Manutenção de sistemas":
+        return "services.maintenance";
+      default:
+        return "services.default";
+    }
   }
-}
 
   return (
     <section className="py-12 px-4 md:px-12 max-w-7xl mx-auto">
@@ -48,7 +49,7 @@ export default function Services({ object }: HomeProps) {
                 overflow-hidden flex flex-col`}
               onClick={() => toggleCard(index)}
             >
-              <div className="relative w-full h-40 rounded-t-lg overflow-hidden">
+              <div className="relative w-full h-40 rounded-t-lg overflow-hidden flex-shrink-0">
                 <Image
                   src={service.image.imgix_url ?? service.image.url}
                   alt={service.description}
@@ -56,15 +57,26 @@ export default function Services({ object }: HomeProps) {
                   className="object-cover"
                 />
               </div>
-              <div className="px-4 py-3">
-                <h3 className="text-black dark:text-white font-semibold text-center">
+              <div className="flex flex-col items-center justify-center px-4 py-3 space-y-2">
+                {/* Título do serviço centralizado e responsivo */}
+                <h3 className="text-black dark:text-white font-semibold text-center text-base md:text-lg">
                   {t(getServiceTitleKey(service.description))}
                 </h3>
+
+                {/* Ícone de seta com rotação animada */}
+                <ChevronDown
+                  size={16}
+                  className={`transition-transform duration-300 text-feltec-muted ${
+                    isOpen ? "rotate-180" : "rotate-0"
+                  }`}
+                />
               </div>
 
               <div
                 className={`px-4 pb-4 text-gray-700 dark:text-gray-300 text-left transition-max-height duration-300 ease-in-out
-                  ${isOpen ? "opacity-100 mt-2 max-h-62" : "opacity-0 max-h-0"}`}
+                  ${
+                    isOpen ? "opacity-100 mt-2 max-h-62" : "opacity-0 max-h-0"
+                  }`}
                 style={{ overflow: "hidden" }}
               >
                 {t(getServiceKey(service.description))}
@@ -92,7 +104,6 @@ function getServiceKey(description: string): string {
       return "services.default_explanation";
   }
 }
-
 
 // "use client";
 

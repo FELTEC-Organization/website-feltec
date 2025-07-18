@@ -4,7 +4,7 @@
   "about": "About",
   "about_description": "Feltec Solutions IT is a company specialized in tailor-made technology solutions, focusing on web development, mobile apps, and system prototyping. We combine innovation, performance, and user experience to deliver efficient, secure, and high-impact projects. With a dedicated and passionate team, we help companies evolve digitally, offering personalized services aligned with market trends and demands.",
   "services": {
-    "title" : "DISCOVER OUR SERVICES",
+    "title" : "Discover our services",
     "web": "Website development",
     "mobile": "App development",
     "prototype": "Prototyping",
@@ -17,9 +17,14 @@
   "contact": {
     "time": "Monday to Friday 08:00 to 18:00"
   },
-  "Inicio" : "HOME",
-  "Servicos" : "SERVICES",
-  "Contato" : "CONTACTS",
+   "Inicio": "HOME",
+  "Sobre": "ABOUT",
+  "Servicos": "SERVICES",
+  "Tecnologias": "TECHNOLOGIES",
+  "Contato": "CONTACT",
+  "Light" : "Light",
+  "Dark" : "Dark",
+  "System" : "System",
   "whoWeAre": {
     "title": "Who We Are",
     "description1": "More than a technology company, Feltec is made up of people who believe in innovation as a transformative force. Our essence is to create, evolve and collaborate side by side with clients, partners, and society.",
@@ -43,7 +48,7 @@
   },
   "expertise": {
     "part1": "Experts in",
-    "part2": "technologies"
+    "part2": "Technologies"
   },
   "footer": {
   "logo_alt": "Feltec Logo",

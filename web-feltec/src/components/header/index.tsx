@@ -5,8 +5,9 @@ import Image from "next/image";
 import Link from "next/link";
 import Logo from "../../../public/Logo Feltec.png";
 import Options from "../dropDownmenu/dropDownmenu";
-import { Menu } from "lucide-react"; // ícone do hambúrguer
+import { Menu } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { audiowide } from "../../../public/fonts/audiowide";
 
 export default function Header() {
   const { t } = useTranslation();
@@ -40,14 +41,16 @@ export default function Header() {
             height={40}
             className="object-contain"
           />
-          <span className="text-xl font-bold text-zinc-900 dark:text-white">FELTEC</span>
+          <span className={`text-2xl font-bold text-zinc-900 dark:text-white ${audiowide.className}`}>FELTEC</span>
         </Link>
 
         {/* Navegação centralizada em telas grandes */}
         <nav className="hidden lg:flex items-center gap-8 absolute left-1/2 transform -translate-x-1/2">
-          <Link href="/#inicio" className="transition-transform duration-700 hover:scale-110">INICIO</Link>
-          <Link href="/#servicos" className="transition-transform duration-700 hover:scale-110">SERVIÇOS</Link>
-          <Link href="/#contatos" className="transition-transform duration-700 hover:scale-110">CONTATO</Link>
+          <Link href="/#inicio" className={`transition-transform duration-700 hover:scale-110" ${audiowide.className}`}>{t("Inicio")}</Link>
+          <Link href="/#sobre" className={`transition-transform duration-700 hover:scale-110" ${audiowide.className}`}>{t("Sobre")}</Link>
+          <Link href="/#servicos" className={`transition-transform duration-700 hover:scale-110 ${audiowide.className}`}>{t("Servicos")}</Link>
+          <Link href="/#stacks" className={`transition-transform duration-700 hover:scale-110" ${audiowide.className}`}>{t("Tecnologias")}</Link>
+          <Link href="/#contatos" className={`transition-transform duration-700 hover:scale-110 ${audiowide.className}`}>{t("Contato")}</Link>
         </nav>
 
         {/* Dropdown tema - visível em qualquer tela */}
@@ -66,10 +69,12 @@ export default function Header() {
 
       {/* Menu Mobile */}
       {isMenuOpen && (
-        <div className="lg:hidden absolute top-16 w-full bg-zinc-300 dark:bg-zinc-900 flex flex-col items-start px-6 py-4 gap-4 z-50 shadow-md">
-          <Link href="/#inicio" onClick={() => setMenuOpen(false)}>{t("Inicio")}</Link>
-          <Link href="/#servicos" onClick={() => setMenuOpen(false)}>{t("Servicos")}</Link>
-          <Link href="/#contatos" onClick={() => setMenuOpen(false)}>{t("Contato")}</Link>
+        <div className="lg:hidden items-center absolute top-16 w-full bg-zinc-300 dark:bg-zinc-900 flex flex-col px-6 py-4 gap-4 z-50 shadow-xl shadow-feltec-primary">
+          <Link href="/#inicio" className={`transition-transform duration-700 hover:scale-110" ${audiowide.className}`}>{t("Inicio")}</Link>
+          <Link href="/#sobre" className={`transition-transform duration-700 hover:scale-110" ${audiowide.className}`}>{t("Sobre")}</Link>
+          <Link href="/#servicos" className={`transition-transform duration-700 hover:scale-110 ${audiowide.className}`}>{t("Servicos")}</Link>
+          <Link href="/#stacks" className={`transition-transform duration-700 hover:scale-110" ${audiowide.className}`}>{t("Tecnologias")}</Link>
+          <Link href="/#contatos" className={`transition-transform duration-700 hover:scale-110 ${audiowide.className}`}>{t("Contato")}</Link>
           <Options />
         </div>
       )}

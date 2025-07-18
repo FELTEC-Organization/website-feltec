@@ -41,13 +41,19 @@ export default function HomeComponent({ object }: HomeProps) {
             bannerUrl={object.metadata.banner.url}
           />
         </section>
-
         {/*Seção sobre  */}
-        <AnimatedSection>
-          <Container>
-            <About object={object} />
-          </Container>
-        </AnimatedSection>
+        <section id="sobre">
+          <AnimatedSection>
+            <Container>
+              <About object={object} />
+            </Container>
+          </AnimatedSection>
+
+          {/* Seção quem somos  */}
+          <AnimatedSection>
+            <WhoWeAre />
+          </AnimatedSection>
+        </section>
 
         {/* Seção serviços */}
         <AnimatedSection>
@@ -56,20 +62,17 @@ export default function HomeComponent({ object }: HomeProps) {
           </section>
         </AnimatedSection>
 
-        {/* Seção quem somos  */}
-        <AnimatedSection>
-          <WhoWeAre />
-        </AnimatedSection>
-
         {/*Seção tecnologias */}
-        <AnimatedSection>
-          <AnimatedTechCarousel />
-        </AnimatedSection>
-
-        {/*Seção benefícios  */}
-        <AnimatedSection>
-          <BenefitsSection />
-        </AnimatedSection>
+        <section id="stacks">
+          <AnimatedSection>
+            <AnimatedTechCarousel />
+          </AnimatedSection>
+          
+          {/*Seção benefícios  */}
+          <AnimatedSection>
+            <BenefitsSection />
+          </AnimatedSection>
+        </section>
       </main>
 
       {/* Seção footer/contatos */}

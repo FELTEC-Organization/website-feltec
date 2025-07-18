@@ -11,11 +11,14 @@ import {
   Github,
   Instagram,
   Linkedin,
+  MessageCircle,
 } from "lucide-react";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
+import { audiowide } from "../../../public/fonts/audiowide";
 
 export default function Footer({ object }: HomeProps) {
+  const buttonUrl = "https://api.whatsapp.com/send?phone=15981223418&text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Feltec.";
   const contact = object.metadata.contact;
   const { t } = useTranslation();
 
@@ -33,16 +36,21 @@ export default function Footer({ object }: HomeProps) {
               height={80}
               className="object-contain"
             />
-            <span className="text-white text-4xl font-bold">FELTEC</span>
+            <span
+              className={`text-white text-4xl font-bold ${audiowide.className}`}
+            >
+              FELTEC
+            </span>
           </Link>
 
           {/* ÍCONES SOCIAIS - ALINHADOS AO CENTRO */}
           <div className="flex gap-4 justify-center text-feltec-primary-light">
             <SocialIcon
-              href="https://github.com/FELTEC-Organization"
-              icon={<Github size={30} />}
-              label="GitHub"
+              href={buttonUrl}
+              icon={<MessageCircle size={30} />}
+              label="WhatsApp"
             />
+           
             <SocialIcon
               href="https://www.instagram.com/feltec_solutions"
               icon={<Instagram size={30} />}
@@ -53,6 +61,12 @@ export default function Footer({ object }: HomeProps) {
               icon={<Linkedin size={30} />}
               label="LinkedIn"
             />
+            <SocialIcon
+              href="https://github.com/FELTEC-Organization"
+              icon={<Github size={30} />}
+              label="GitHub"
+            />
+            
           </div>
         </div>
 
@@ -105,7 +119,7 @@ export default function Footer({ object }: HomeProps) {
         <span>
           © {new Date().getFullYear()} FELTEC. {t("footer.rights_reserved")}
         </span>
-        <span>{t("footer.developed_by")}</span>
+        <span>{t("footer.developed_by")} - V1.0</span>
       </div>
     </footer>
   );
