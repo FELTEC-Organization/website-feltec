@@ -11,7 +11,12 @@ import {
     CarouselPrevious,
 } from "@/components/ui/carousel";
 
-const beneficios = [
+interface Beneficio {
+    titulo: string;
+    descricao: string;
+}
+
+const beneficios: Beneficio[] = [
     {
         titulo: "Expertise e tecnologia de ponta",
         descricao: "Tenha acesso a conhecimento especializado, tecnologias avançadas e tendências do mercado.",
@@ -40,38 +45,51 @@ const beneficios = [
 
 export default function Beneficios() {
     return (
-        <div className="w-screen min-h-screen flex flex-col items-center justify-center space-y-10 p-6 m-4">
-            <h2 className="text-2xl font-semibold text-center max-w-2xl dark:text-white">
-                Quais são os benefícios que a terceirização de TI traz para seu negócio?
-            </h2>
-            <div className="relative w-full max-w-7xl overflow-visible">
-                <Carousel opts={{ align: "start" }} orientation="horizontal" className="w-full relative">
-                    <CarouselContent className="">
-                        {beneficios.map((beneficio, index) => (
-                            <CarouselItem key={index} className="basis-[300px] md:basis-[350px] lg:basis-[400px]">
-                                <motion.div
-                                    whileHover={{ scale: 1.05 }}
-                                    whileTap={{ scale: 0.98 }}
-                                    className="p-2"
-                                >
-                                    <Card className="min-h-[340px] flex flex-col justify-between items-center rounded-2xl border border-muted shadow-md transition hover:shadow-lg dark:bg-neutral-900 dark:bg-[#014aaa]">
-                                        <CardContent className="flex flex-col gap-4 p-6 text-center justify-center items-center m-4">
-                                            <BadgeCheck className="w-6 h-6 text-green-600" />
-                                            <span className="text-2xl font-bold text-primary dark:text-green-400"></span>
-                                            <h3 className="text-lg font-semibold dark:text-white">{beneficio.titulo}</h3>
-                                            <p className="p-4 text-sm text-muted-foreground dark:text-gray-400">
-                                                {beneficio.descricao}
-                                            </p>
-                                        </CardContent>
-                                    </Card>
-                                </motion.div>
-                            </CarouselItem>
-                        ))}
-                    </CarouselContent>
-                    <CarouselPrevious className="absolute top-1/2 -translate-y-1/2 left-0 z-10 flex px-1 m-3" />
-                    <CarouselNext className="absolute top-1/2 -translate-y-1/2 right-0 z-10 flex px-1 m-3" />
-                </Carousel>
-            </div>
+<div className="relative w-full bg-white dark:bg-[#0a0a0a] py-16">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 dark:text-white mb-12">
+            Quais são os benefícios que a terceirização de TI traz para seu negócio?
+        </h2>
+
+        <div className="relative w-full flex justify-center">
+            <Carousel
+                opts={{ align: "center" }}
+                className="w-full relative"
+            >
+                <CarouselContent className="gap-6">
+                    {beneficios.map((beneficio, index) => (
+                        <CarouselItem
+                            key={index}
+                            className="basis-[90%] sm:basis-1/2 md:basis-1/3"
+                        >
+                            <motion.div
+                                whileHover={{ scale: 1.03 }}
+                                className="h-full"
+                            >
+                                <Card className="h-full bg-gray-50 dark:bg-[#0f172a] border border-gray-200 dark:border-gray-800 rounded-xl shadow-md">
+                                    <CardContent className="flex flex-col gap-4 p-6 h-[300px]">
+                                        <div className="flex justify-center">
+                                            <BadgeCheck className="w-8 h-8 text-green-500" />
+                                        </div>
+                                        <h3 className="text-lg font-bold text-center text-gray-900 dark:text-white">
+                                            {beneficio.titulo}
+                                        </h3>
+                                        <p className="text-gray-600 dark:text-gray-300 text-center">
+                                            {beneficio.descricao}
+                                        </p>
+                                    </CardContent>
+                                </Card>
+                            </motion.div>
+                        </CarouselItem>
+                    ))}
+                </CarouselContent>
+
+                {/* SETAS FORA DOS CARDS, SEM CORTAR */}
+                <CarouselPrevious className=" hidden md:flex absolute top-1/2 -translate-y-1/2 left-0 -translate-x-1/2 z-20 bg-white dark:bg-gray-800 shadow-lg rounded-full h-10 w-10" />
+                <CarouselNext className=" hidden md:flex absolute top-1/2 -translate-y-1/2 right-0 translate-x-1/2 z-20 bg-white dark:bg-gray-800 shadow-lg rounded-full h-10 w-10" />
+            </Carousel>
         </div>
+    </div>
+</div>
     );
 }
