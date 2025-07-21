@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import Logo from "../../../public/Logo Feltec.png";
 import Options from "../dropDownmenu/dropDownmenu";
-import { Menu } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { audiowide } from "../../../public/fonts/audiowide";
 
@@ -60,10 +59,22 @@ export default function Header() {
 
         {/* Botão de menu mobile/tablet */}
         <button
-          className="lg:hidden ml-auto"
+          className="lg:hidden ml-auto flex flex-col justify-center items-center w-8 h-8 relative z-50"
           onClick={() => setMenuOpen(!isMenuOpen)}
+          aria-label="Toggle Menu"
         >
-          <Menu size={28} />
+          <span
+            className={`block w-6 h-0.5 bg-zinc-900 dark:bg-white transition-transform duration-300 ${isMenuOpen ? "rotate-45 translate-y-1.5" : ""
+              }`}
+          />
+          <span
+            className={`block w-6 h-0.5 bg-zinc-900 dark:bg-white my-1 transition-all duration-300 ${isMenuOpen ? "opacity-0" : ""
+              }`}
+          />
+          <span
+            className={`block w-6 h-0.5 bg-zinc-900 dark:bg-white transition-transform duration-300 ${isMenuOpen ? "-rotate-45 -translate-y-1.5" : ""
+              }`}
+          />
         </button>
       </div>
 
