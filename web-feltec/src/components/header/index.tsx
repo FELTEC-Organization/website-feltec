@@ -45,10 +45,10 @@ export default function Header() {
 
         {/* Navegação centralizada em telas grandes */}
         <nav className="hidden lg:flex items-center gap-8 absolute left-1/2 transform -translate-x-1/2">
-          <Link href="/#inicio" className={`transition-transform duration-700 hover:scale-110" ${audiowide.className}`}>{t("Inicio")}</Link>
-          <Link href="/#sobre" className={`transition-transform duration-700 hover:scale-110" ${audiowide.className}`}>{t("Sobre")}</Link>
+          <Link href="/#inicio" className={`transition-transform duration-700 hover:scale-110 ${audiowide.className}`}>{t("Inicio")}</Link>
+          <Link href="/#sobre" className={`transition-transform duration-700 hover:scale-110 ${audiowide.className}`}>{t("Sobre")}</Link>
           <Link href="/#servicos" className={`transition-transform duration-700 hover:scale-110 ${audiowide.className}`}>{t("Servicos")}</Link>
-          <Link href="/#stacks" className={`transition-transform duration-700 hover:scale-110" ${audiowide.className}`}>{t("Tecnologias")}</Link>
+          <Link href="/#stacks" className={`transition-transform duration-700 hover:scale-110 ${audiowide.className}`}>{t("Tecnologias")}</Link>
           <Link href="/#contatos" className={`transition-transform duration-700 hover:scale-110 ${audiowide.className}`}>{t("Contato")}</Link>
         </nav>
 
