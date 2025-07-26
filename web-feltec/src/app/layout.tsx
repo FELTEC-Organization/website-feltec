@@ -16,8 +16,33 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Feltec - Soluções em TI",
-  description: "Feltec website",
+  title: "Feltec Solutions TI",
+  description: "Soluções digitais sob medida para o seu negócio.",
+  icons: {
+    icon: "/favicon.png",
+  },
+  openGraph: {
+    title: "Feltec Solutions",
+    description: "Soluções digitais sob medida para o seu negócio.",
+    url: "https://feltecsolutions.com.br",
+    siteName: "Feltec Solutions",
+    images: [
+      {
+        url: "/favicon.png",
+        width: 1200,
+        height: 630,
+        alt: "Feltec Solutions",
+      },
+    ],
+    locale: "pt_BR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Feltec Solutions",
+    description: "Soluções digitais sob medida para o seu negócio.",
+    images: ["/favicon.png"],
+  },
 };
 
 export default function RootLayout({
