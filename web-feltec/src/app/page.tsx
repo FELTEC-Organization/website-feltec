@@ -33,7 +33,7 @@ export default function Home() {
     ],
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+55-11-99999-9999",
+      "telephone": "+55-15-9812-3418",
       "contactType": "customer service",
       "areaServed": "BR",
       "availableLanguage": ["Portuguese", "English"]
