@@ -45,6 +45,7 @@ export default function Home() {
       <Head>
         <title>{seo.title}</title>
         <meta name="description" content={seo.description} />
+        <meta name="google-site-verification" content="nrxnEojxOirKFaPWsRCH6cbOwnMzVcuH6cgnvGT2pfU" />
         <meta name="robots" content="index, follow" />
         <meta property="og:title" content={seo.title} />
         <meta property="og:description" content={seo.description} />
