@@ -4,7 +4,6 @@ import "./globals.css";
 import Header from "@/components/header";
 import { ThemeProvider } from "../components/themechange/themeProvider";
 import I18nProvider from "@/i18n/I18nProvider";
-import Head from "next/head";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
