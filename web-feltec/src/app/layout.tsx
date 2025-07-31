@@ -44,5 +44,30 @@ export const metadata: Metadata = {
     description: "Soluções digitais sob medida para o seu negócio.",
     images: ["/favicon.png"],
   },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="pt-BR" suppressHydrationWarning>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <I18nProvider>
+            <Header />
+            {children}
+          </I18nProvider>
+        </ThemeProvider>
+      </body>
+    </html>
+  );
+}
 
