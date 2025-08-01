@@ -17,6 +17,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Feltec Solutions IT",
+  metadataBase: new URL("https://www.feltecsolutions.com.br"),
   description: "Soluções digitais sob medida para o seu negócio.",
   icons: {
     icon: "/favicon.ico",
