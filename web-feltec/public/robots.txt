@@ -1,3 +1,9 @@
+# *
 User-agent: *
 Allow: /
+
+# Host
+Host: https://www.feltecsolutions.com.br
+
+# Sitemaps
 Sitemap: https://www.feltecsolutions.com.br/sitemap.xml
