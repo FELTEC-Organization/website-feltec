@@ -22,10 +22,10 @@ export const metadata: Metadata = {
     icon: "/favicon.ico",
   },
   openGraph: {
-    title: "Feltec Solutions",
+    title: "Feltec Solutions IT",
     description: "Soluções digitais sob medida para o seu negócio.",
     url: "https://feltecsolutions.com.br",
-    siteName: "Feltec Solutions",
+    siteName: "Feltec Solutions IT",
     images: [
       {
         url: "/favicon.png",
