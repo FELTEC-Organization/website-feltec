@@ -119,7 +119,7 @@ export default function Footer({ object }: HomeProps) {
         <span>
           © {new Date().getFullYear()} FELTEC. {t("footer.rights_reserved")}
         </span>
-        <span>{t("footer.developed_by")} - V1.0</span>
+        <span>{t("footer.developed_by")} - V1.1.0</span>
       </div>
     </footer>
   );
