@@ -58,7 +58,7 @@ export default function RootLayout({
 }>) {
   return (
 
-    <html lang="en" suppressHydrationWarning>
+    <html lang="pt-br" suppressHydrationWarning>
       <head>
         <meta name="google-site-verification" content="nrxnEojxOirKFaPWsRCH6cbOwnMzVcuH6cgnvGT2pfU" />
         <link rel="shortcut icon" href="/favicon.ico" />
@@ -82,7 +82,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
 
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <I18nProvider>
             <Header />
             {children}
